@@ -1,14 +1,16 @@
 const express = require('express');
 
 const app = express();
-
-app.use((req, res, next) => {
-	console.log('middleweare 1');
+app.use('/', (req, res, next) => {
+	console.log('bu har doim ishlaydi');
 	next();
 });
-app.use((req, res, next) => {
-	console.log('middleweare 2');
-	res.send('<h1>salomlar</h1>');
+app.use('/users', (req, res, next) => {
+	res.send('<h1>Keyingi sahifa</h1>');
+});
+
+app.use('/', (req, res, next) => {
+	res.send('<h1>Bosh sahifa</h1>');
 });
 
 const PORT = process.env.PORT || 3000;

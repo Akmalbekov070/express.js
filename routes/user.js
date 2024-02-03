@@ -1,14 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 
 router.get('/new-add', (req, res) => {
-	res.send(`
-     <form action="/users" method="POST">
-     <input type="text" name="username" >
-     <input type="number" name="age">
-     <button>send</button>
-     </form> 
-  `);
+	res.sendFile(path.join(__dirname, '..', 'views', 'added-user.html'));
 });
 
 router.post('/users', (req, res) => {

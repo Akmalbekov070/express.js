@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const useRoutes = require('./routes/user');
 const useMain = require('./routes/main');
-app.use(useRoutes);
+app.use(useRoutes.router);
 app.use(useMain);
 
 app.use((req, res) => {

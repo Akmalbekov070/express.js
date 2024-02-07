@@ -6,7 +6,7 @@ const users = require('./user');
 
 router.get('/', (req, res) => {
 	console.log(users.arrayUsers);
-	res.sendFile(path.join(__dirname, '..', 'views', 'main.html'));
+	res.render('main');
 });
 
 module.exports = router;

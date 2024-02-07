@@ -9,3 +9,19 @@ header {
 	height: 120px;
 	background-color: blue;
 }
+h1 {
+	color: white;
+}
+ul {
+	width: 100%;
+	display: flex;
+	gap: 2rem;
+	padding-top: 10px;
+}
+li {
+	list-style: none;
+}
+a {
+	color: white;
+	text-decoration: none;
+}

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const arrayUsers = [];
+const users = [];
 
 router.get('/added-user.html', (req, res) => {
 	res.sendFile(path.join(__dirname, '..', 'views', 'added-user.html'));
@@ -13,4 +13,4 @@ router.post('/users', (req, res) => {
 });
 
 exports.router = router;
-exports.arrayUsers = arrayUsers;
+exports.arrayUsers = users;

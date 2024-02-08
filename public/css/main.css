@@ -26,3 +26,21 @@ a {
 	color: white;
 	text-decoration: none;
 }
+
+.card {
+	width: 400px;
+	height: 470px;
+	box-shadow: 2px 2px 3px black;
+	margin: 40px auto;
+}
+.contsainer {
+	width: 400px;
+	height: 40px;
+	background: #ffffff;
+	text-align: center;
+	padding: 5px 0px;
+}
+
+p {
+	padding-top: 6px;
+}

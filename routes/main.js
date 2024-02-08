@@ -6,7 +6,10 @@ const users = require('./user');
 
 router.get('/', (req, res) => {
 	console.log(users.arrayUsers);
-	res.render('main');
+	res.render('main', {
+		title: 'user list',
+		users,
+	});
 });
 
 module.exports = router;

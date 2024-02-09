@@ -6,20 +6,26 @@ html(lang="en")
     title #{title}
     link(rel="stylesheet", href="/css/main.css")
   body 
-  header
-    h1 Bosh sahifa
-    ul  
-      li 
-       a(href="/") Users page
-      li 
-       a(href="./added-user.html")  add-users page
+    header
+       h1 Bosh sahifa
+       ul  
+        li 
+         a(href="/") Users page
+        li 
+         a(href="./added-user.html")  add-users page
+    main 
+      h1 User list
+      each user in users
+        main.card
+          img(src="https://klike.net/uploads/posts/2023-01/1674365337_3-31.jpg", alt="avatar" style="width:100%")
+          div.contsainer
+            h4
+               b #{user.username}
+            p age: 14 
 
-main
-each user in users  
-  main.card
-      img(src="https://klike.net/uploads/posts/2023-01/1674365337_3-31.jpg", alt="avatar img", style="width:100%")
-        div.contsainer
-           h4
-            b 
-           p age: 14 
+  
+
+
+
+
   

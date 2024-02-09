@@ -8,9 +8,9 @@ router.get('/added-user.html', (req, res) => {
 });
 
 router.post('/users', (req, res) => {
-	arrayUsers.push({ username: req.body.username, age: req.body.age });
+	users.push({ username: req.body.username, age: req.body.age });
 	res.redirect('/');
 });
 
 exports.router = router;
-exports.arrayUsers = users;
+exports.users = users;

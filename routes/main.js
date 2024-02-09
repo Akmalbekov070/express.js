@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 	console.log(users);
 	res.render('main', {
 		title: 'user list',
-		users,
+		users: users,
 	});
 });
 

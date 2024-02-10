@@ -1,9 +1,18 @@
-extends layout/main-layout.pug
-
-block styles
-  link(rel="stylesheet", href="/css/main.css")
-
-  block content 
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title #{title}
+    link(rel="stylesheet", href="/css/main.css")
+  body 
+    header
+       h1 Bosh sahifa
+       ul  
+        li 
+         a(href="/") Users page
+        li 
+         a(href="./added-user.html")  add-users page
     main 
       h1 User list
       each user in users
@@ -13,6 +22,7 @@ block styles
             h4
                b #{user.username}
             p age: #{user.age}
+
   
 
 

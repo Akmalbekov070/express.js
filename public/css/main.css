@@ -29,16 +29,15 @@ a {
 
 .card {
 	width: 400px;
-	height: 490px;
+	height: 460px;
 	box-shadow: 2px 2px 3px black;
 	margin: 10px auto;
 }
 .contsainer {
 	width: 400px;
-	height: 80px;
+	height: 40px;
 	background: #ffffff;
 	text-align: center;
-
 	color: black;
 }
 

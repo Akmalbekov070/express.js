@@ -1,9 +1,11 @@
 const express = require('express');
 const path = require('path');
-
+const { engine } = require('express-handlebars');
 const app = express();
-app.set('view engine', 'pug');
+
+// app.set('view engine', 'pug');
 app.set('views', 'views');
+app;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

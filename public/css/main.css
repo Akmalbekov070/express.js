@@ -24,7 +24,6 @@ li {
 }
 a {
 	color: white;
-	text-decoration: none;
 }
 
 .card {
@@ -43,4 +42,8 @@ a {
 
 p {
 	padding-top: 1px;
+}
+
+h1 span {
+	color: black;
 }

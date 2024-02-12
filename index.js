@@ -4,10 +4,10 @@ const { engine } = require('express-handlebars');
 const app = express();
 
 // app.set('view engine', 'pug');
-app.set('views', 'views');
 app.engine('handlebars', engine());
-app.set('views engine', 'hbs');
+app.set('views engine', 'handlebars');
 
+app.set('views', 'views');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));

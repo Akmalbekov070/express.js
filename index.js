@@ -18,7 +18,7 @@ app.use(useRoutes.router);
 app.use(useMain);
 
 app.use((req, res) => {
-	res.status(404).render('404', { title: 'page not found' });
+	res.status(404).render('404', { title: 'Page not found' });
 });
 
 const PORT = process.env.PORT || 3000;

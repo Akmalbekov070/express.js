@@ -1,5 +1,11 @@
-<h2>user list</h2>
-<main class='card'>
-	<img src='https://klike.net/uploads/posts/2023-01/1674365337_3-31.jpg' alt='img' style='width:100%' />
-	<h1>jon</h1>
-</main>
+{{#if users}}
+	{{#each users}}
+		<main class='card'>
+			<img src='https://klike.net/uploads/posts/2023-01/1674365337_3-31.jpg' alt='img' style='width:100%' />
+			<h2>Name: {{username}}</h2>
+			<h2>Age: {{age}}</h2>
+		</main>
+	{{/each}}
+{{else}}
+	<h2>user List all..</h2>
+{{/if}}

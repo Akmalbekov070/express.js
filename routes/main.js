@@ -1,15 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
+const { MainPage } = require('../controllers/main');
 
-const { users } = require('./user');
-
-router.get('/', (req, res) => {
-	console.log(users);
-	res.render('main', {
-		title: 'user list',
-		users: users,
-	});
-});
+router.get('/', MainPage);
 
 module.exports = router;

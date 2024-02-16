@@ -1,14 +1,14 @@
 const express = require('express');
 const path = require('path');
-// const { engine } = require('express-handlebars');
+const { engine } = require('express-handlebars');
 const app = express();
 //pug=======================
 // app.set('view engine', 'pug');
 //handlebars===========
-//app.engine('handlebars', engine());
-//app.set('view engine', 'handlebars');
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
 //ejs=============
-app.set('view engine', 'ejs');
+// app.set('view engine', 'ejs');
 app.set('views', 'views');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

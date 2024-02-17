@@ -7,7 +7,7 @@ module.exports = class User {
 	save() {
 		users.push({ username: this.username, age: this.age });
 	}
-	findAll() {
+	static findAll() {
 		return users;
 	}
 };

@@ -5,6 +5,7 @@ module.exports = class User {
 	constructor(username, age) {
 		(this.username = username), (this.age = age);
 	}
+
 	save() {
 		let users = [];
 		fs.readFile(path.join(__dirname, '../data/users.json'), 'utf8', (err, data) => {
@@ -17,6 +18,6 @@ module.exports = class User {
 		});
 	}
 	static findAll() {
-		return users;
+		fs.readFile(path.join(__dirname, '../data/users.json'));
 	}
 };

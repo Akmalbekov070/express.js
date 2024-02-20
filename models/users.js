@@ -19,6 +19,7 @@ module.exports = class User {
 		});
 	}
 	static findAll() {
-		fs.readFileSync(pathModule, 'utf8');
+		const data = () => fs.readFileSync(pathModule, 'utf8');
+		return JSON.parse(data());
 	}
 };

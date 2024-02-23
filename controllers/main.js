@@ -1,10 +1,17 @@
+const pool = require('../config/db');
 const User = require('../models/users');
 
-const MainPage = (req, res) => {
-	res.render('main', {
-		title: 'user list',
-		users,
-	});
+const MainPage = async (req, res) => {
+	try {
+		const users = await pool.query('SELECT * FROM user_info');
+		console.log(users);
+		res.render('main', {
+			title: 'User list',
+			users,
+		});
+	} catch (error) {
+		console.log(error);
+	}
 };
 
 module.exports = {

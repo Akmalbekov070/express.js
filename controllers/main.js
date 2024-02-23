@@ -7,7 +7,7 @@ const MainPage = async (req, res) => {
 		console.log(users);
 		res.render('main', {
 			title: 'User list',
-			users,
+			users: users.rows,
 		});
 	} catch (error) {
 		console.log(error);

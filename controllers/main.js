@@ -17,13 +17,12 @@ const MainPage = async (req, res) => {
 const getUserPageId = async (req, res) => {
 	try {
 		const user = await pool.query('SELECT * FROM user_info WHERE id = $1', [req.params.id]);
+		console.log(user.rows);
 		res.render('page-user', {
 			title: user.rows[0].username,
 			user: user.rows[0],
 		});
-	} catch (err) {
-		console.log(err);
-	}
+	} catch (err) {}
 };
 
 module.exports = {

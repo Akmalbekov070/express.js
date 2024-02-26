@@ -21,8 +21,8 @@ const getUserPageId = async (req, res) => {
 			title: user.rows[0].username,
 			user: user.rows[0],
 		});
-	} catch (error) {
-		console.log(error);
+	} catch (err) {
+		console.log(err);
 	}
 };
 

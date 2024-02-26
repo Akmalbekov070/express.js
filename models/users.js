@@ -22,4 +22,11 @@ module.exports = class User {
 		const data = () => fs.readFileSync(pathModule, 'utf8');
 		return JSON.parse(data());
 	}
+
+	// static findByUid(uid) {
+	// 	const data = () => fs.readFileSync(pathToFile, 'utf8');
+	// 	const users = JSON.parse(data());
+	// 	const user = users.find(el => el.uid === uid);
+	// 	return user;
+	// }
 };

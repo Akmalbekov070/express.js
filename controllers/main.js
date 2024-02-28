@@ -22,7 +22,9 @@ const getUserPageId = async (req, res) => {
 			title: user.rows[0].username,
 			user: user.rows[0],
 		});
-	} catch (err) {}
+	} catch (err) {
+		console.log(err);
+	}
 };
 
 module.exports = {

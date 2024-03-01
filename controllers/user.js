@@ -21,7 +21,20 @@ const UsersPage = async (req, res) => {
 	}
 };
 
+const UptedUserPage = async (req, res) => {
+	try {
+		const user = await pool.query('SELECT * FROM user_info WHERE id = $1', [req.params.id]);
+		res.render('edit-user', {
+			title: 'edit-user',
+			user: user.rows[0],
+		});
+	} catch (error) {
+		console.log(error);
+	}
+};
+
 module.exports = {
 	AddedPage,
 	UsersPage,
+	UptedUserPage,
 };

@@ -34,7 +34,11 @@ const UptedUserPage = async (req, res) => {
 };
 const UptedUser = async (req, res) => {
 	try {
-		const user = await pool.query('SELECT * FROM user_info WHERE id = $1', [req.params.id]);
+		await pool.query('UPDATE user_info SET username = $1, age = $2 WHERE id = $3', [
+			req.body.username,
+			req.body.age,
+			req.params.id,
+		]);
 		res.redirect('/');
 	} catch (error) {
 		console.log(error);

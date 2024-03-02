@@ -35,10 +35,7 @@ const UptedUserPage = async (req, res) => {
 const UptedUser = async (req, res) => {
 	try {
 		const user = await pool.query('SELECT * FROM user_info WHERE id = $1', [req.params.id]);
-		res.render('edit-user', {
-			title: 'edit-user',
-			user: user.rows[0],
-		});
+		res.redirect('/');
 	} catch (error) {
 		console.log(error);
 	}

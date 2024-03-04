@@ -45,9 +45,19 @@ const UptedUser = async (req, res) => {
 	}
 };
 
+const DelteUser = async (req, res) => {
+	try {
+		await pool.query('DELETE FROM user_info WHERE id = $1', [req.params.id]);
+		res.redirect('/');
+	} catch (error) {
+		console.log(error);
+	}
+};
+
 module.exports = {
 	AddedPage,
 	UsersPage,
 	UptedUserPage,
 	UptedUser,
+	DelteUser,
 };

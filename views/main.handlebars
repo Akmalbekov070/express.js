@@ -4,8 +4,14 @@
 			<img src='https://klike.net/uploads/posts/2023-01/1674365337_3-31.jpg' alt='img' style='width:100%' />
 			<h2>Name: {{username}}</h2>
 			<h2>Age: {{age}}</h2>
+			<span>
+				<a href='/users/{{id}}'>more info...</a>
+				<a href='/edit/{{id}}'>edit info...</a>
+			</span>
 		</main>
 	{{/each}}
 {{else}}
 	<h2>user List all..</h2>
 {{/if}}
+
+{{!-- handlebarsda malumot {{}} shunday olinadi --}}

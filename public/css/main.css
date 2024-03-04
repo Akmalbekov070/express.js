@@ -60,3 +60,26 @@ span a {
 	text-decoration: none;
 	border: 1px solid green;
 }
+form {
+	width: 100%;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	padding-top: 80px;
+}
+form input {
+	width: 250px;
+	height: 25px;
+	outline: none;
+	border-color: aqua;
+}
+button {
+	width: 100px;
+	height: 30px;
+	outline: none;
+	border: 1px solid aqua;
+	background-color: aqua;
+	border-radius: 10px;
+}

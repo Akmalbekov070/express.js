@@ -83,3 +83,12 @@ button {
 	background-color: aqua;
 	border-radius: 10px;
 }
+
+.form {
+	width: 100%;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 50px;
+}

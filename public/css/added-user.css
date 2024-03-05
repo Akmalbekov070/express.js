@@ -50,4 +50,5 @@ button {
 	border: 1px solid aqua;
 	background-color: aqua;
 	border-radius: 10px;
+	cursor: pointer;
 }

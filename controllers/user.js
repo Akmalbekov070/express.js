@@ -1,6 +1,5 @@
 const path = require('path');
 const pool = require('../config/db');
-const { log } = require('console');
 
 const AddedPage = (req, res) => {
 	res.sendFile(path.join(__dirname, '..', 'views', 'added-user.html'));

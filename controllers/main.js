@@ -1,5 +1,4 @@
 const pool = require('../config/db');
-const User = require('../models/users');
 
 const MainPage = async (req, res) => {
 	try {

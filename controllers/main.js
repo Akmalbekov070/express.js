@@ -1,11 +1,12 @@
 const pool = require('../config/db');
+const User = require('../models/users');
 
 const MainPage = async (req, res) => {
 	try {
-		const users = await pool.query('SELECT * FROM user_info');
+		const users = await User.findAll();
 		res.render('main', {
 			title: 'User list',
-			users: users.rows,
+			users: users,
 		});
 	} catch (error) {
 		console.log(error);

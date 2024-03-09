@@ -17,8 +17,8 @@ const getUserPageId = async (req, res) => {
 	try {
 		const user = await User.findByid(req.params.id);
 		res.render('page-user', {
-			title: user.rows[0].username,
-			user: user.rows[0],
+			title: user.username,
+			user: user,
 		});
 	} catch (err) {
 		console.log(err);

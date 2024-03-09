@@ -25,7 +25,7 @@ module.exports = class User {
 	}
 
 	static async findByid(id) {
-		const user = await pool.query('SELECT * FROM user_info WHERE id = $1', [req.params.id]);
+		const user = await pool.query('SELECT * FROM user_info WHERE id = $1', [id]);
 		return user.rows[0];
 	}
 };

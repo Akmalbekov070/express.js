@@ -24,10 +24,8 @@ module.exports = class User {
 		return users.rows;
 	}
 
-	// static findByUid(uid) {
-	// 	const data = () => fs.readFileSync(pathToFile, 'utf8');
-	// 	const users = JSON.parse(data());
-	// 	const user = users.find(el => el.uid === uid);
-	// 	return user;
-	// }
+	static async findByid(id) {
+		const user = await pool.query('SELECT * FROM user_info WHERE id = $1', [req.params.id]);
+		return user.rows[0];
+	}
 };

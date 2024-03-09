@@ -1,5 +1,6 @@
 const path = require('path');
 const pool = require('../config/db');
+const User = require('../models/users');
 
 const AddedPage = (req, res) => {
 	res.sendFile(path.join(__dirname, '..', 'views', 'added-user.html'));
@@ -7,14 +8,9 @@ const AddedPage = (req, res) => {
 
 const UsersPage = async (req, res) => {
 	try {
-		const newUsers = await pool.query(
-			`
-		INSERT INTO user_info (username, age) VALUES ($1,$2)
-		`,
-			[req.body.username, req.body.age]
-		);
+		const newUser = new User(req.body.username, req.body.age);
+		await newUser.save();
 		res.redirect('/');
-		console.log(newUsers);
 	} catch (error) {
 		console.log(error);
 	}

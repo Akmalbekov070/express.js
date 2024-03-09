@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const pathModule = path.join(__dirname, '../data/users.json');
+// const fs = require('fs');
+// const path = require('path');
+// const pathModule = path.join(__dirname, '../data/users.json');
 const pool = require('../config/db');
 
 module.exports = class User {
@@ -8,16 +8,22 @@ module.exports = class User {
 		(this.username = username), (this.age = age);
 	}
 
-	save() {
-		let users = [];
-		fs.readFile(pathModule, 'utf8', (err, data) => {
-			if (err) throw err;
-			users = JSON.parse(data);
-			users.push({ username: this.username, age: this.age });
-			fs.writeFile(pathModule, JSON.stringify(users), err => {
-				if (err) throw err;
-			});
-		});
+	async save() {
+		await pool.query(
+			`
+		INSERT INTO user_info (username, age) VALUES ($1,$2)
+		`,
+			[this.username, this.age]
+		);
+		// let users = [];
+		// fs.readFile(pathModule, 'utf8', (err, data) => {
+		// 	if (err) throw err;
+		// 	users = JSON.parse(data);
+		// 	users.push({ username: this.username, age: this.age });
+		// 	fs.writeFile(pathModule, JSON.stringify(users), err => {
+		// 		if (err) throw err;
+		// 	});
+		// });
 	}
 	static async findAll() {
 		const users = await pool.query('SELECT * FROM user_info');

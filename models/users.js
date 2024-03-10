@@ -34,4 +34,7 @@ module.exports = class User {
 		const user = await pool.query('SELECT * FROM user_info WHERE id = $1', [id]);
 		return user.rows[0];
 	}
+	static async findByUpdate(id, username, age) {
+		await pool.query('UPDATE user_info SET username = $1, age = $2 WHERE id = $3', [username, age, id]);
+	}
 };

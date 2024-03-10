@@ -37,4 +37,5 @@ module.exports = class User {
 	static async findByUpdate(id, username, age) {
 		await pool.query('UPDATE user_info SET username = $1, age = $2 WHERE id = $3', [username, age, id]);
 	}
+	static async findByDelete(id) {}
 };
